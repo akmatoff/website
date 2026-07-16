@@ -1,6 +1,5 @@
 ---
 import { getEntry } from "astro:content";
-import RootLayout from "../layouts/RootLayout.astro";
 import { render } from "astro:content";
 import PageHeader from "../components/PageHeader.astro";
 
@@ -12,10 +11,10 @@ const { data } = aboutContent;
 const { Content } = await render(aboutContent);
 ---
 
-<RootLayout>
-  <article class="content">
-    <PageHeader title={data.title} description={data.description} />
+<section>
+  <PageHeader title={data.title} description={data.description} />
 
+  <div class="w-full text-sm/6 text-muted-foreground">
     <Content />
-  </article>
-</RootLayout>
+  </div>
+</section>

@@ -11,7 +11,7 @@ if (!experience) throw new Error("Experience content not found");
 <section>
   <PageHeader title="Experience" description="My work experience" />
 
-  <div class="space-y-8">
+  <div class="space-y-4">
     {
       experience
         .sort((a, b) => b.data.startDate.getTime() - a.data.startDate.getTime())
@@ -19,15 +19,15 @@ if (!experience) throw new Error("Experience content not found");
           const Body = await exp.render();
 
           return (
-            <div>
+            <div class="w-full">
               <div class="flex items-start justify-between">
                 <div>
-                  <h2 class="font-medium text-lg">{exp.data.position}</h2>
+                  <h2 class="font-medium">{exp.data.position}</h2>
                   <a
                     href={exp.data.companyLink || "#"}
                     class={clsx(
                       "text-muted-foreground text-sm",
-                      exp.data.companyLink && "underline"
+                      exp.data.companyLink && "underline",
                     )}
                   >
                     {exp.data.company}

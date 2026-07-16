@@ -5,12 +5,12 @@
 @layer base {
   :root {
     --primary: #050505;
-    --background: #fafafa;
+    --background: #ffffff;
     --content: #ffffff;
     --muted: #f0f0f0;
-    --foreground: #1f1f1f;
-    --muted-foreground: #818181;
-    --border: #242424;
+    --foreground: #202020;
+    --muted-foreground: #424242;
+    --border: #5a5a5a;
 
     --shadow-sm: 0 1px 2px #ffffff30, 0 1px 3px #00000020;
     --shadow-inner-sm: inset 0 1px 2px #ffffff30, inset 0 1px 3px #00000020;
@@ -30,7 +30,7 @@
   }
 
   body {
-    font-family: "Geist Mono", sans-serif;
+    font-family: "Comissioner", sans-serif;
     @apply bg-background text-foreground;
   }
 

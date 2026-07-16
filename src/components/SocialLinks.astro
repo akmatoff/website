@@ -1,6 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-import SidebarItem from "./SidebarItem.astro";
 
 const socialLinks = [
   {
@@ -17,23 +16,30 @@ const socialLinks = [
   },
   {
     label: "E-mail",
-    link: "mailto:hello@akmatoff.cv",
+    link: "mailto:azim.akmatov1@gmail.com",
     icon: "ri:mail-fill",
     isTargetBlank: true,
   },
 ];
 ---
 
-<section class="space-y-4">
-  <h2 class="ml-4">Social</h2>
-
-  <ul class="space-y-2">
+<section class="w-full py-2">
+  <div class="flex space-x-6">
     {
       socialLinks.map((link) => (
-        <li>
-          <SidebarItem nav={link} trailingIcon="ri:arrow-right-s-line" />
-        </li>
+        <div class="flex items-center space-x-2">
+          <a href={link.link} target={link.isTargetBlank ? "_blank" : "_self"}>
+            <Icon name={link.icon} class="text-xl" />
+          </a>
+          <a
+            href={link.link}
+            class="text-sm"
+            target={link.isTargetBlank ? "_blank" : "_self"}
+          >
+            {link.label}
+          </a>
+        </div>
       ))
     }
-  </ul>
+  </div>
 </section>
